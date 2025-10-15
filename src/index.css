@@ -1,0 +1,955 @@
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom CSS for Vigovia colors */
+:root {
+  --vigovia-purple: #321E5D;
+  --vigovia-light-purple: #6B46C1;
+  --vigovia-gradient-start: #3B82F6;
+  --vigovia-gradient-end: #8B5CF6;
+}
+
+/* Utility Classes */
+.bg-vigovia-purple {
+  background-color: var(--vigovia-purple);
+}
+
+.text-vigovia-purple {
+  color: var(--vigovia-purple);
+}
+
+.bg-vigovia-light-purple {
+  background-color: var(--vigovia-light-purple);
+}
+
+.text-vigovia-light-purple {
+  color: var(--vigovia-light-purple);
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, var(--vigovia-gradient-start), var(--vigovia-gradient-end));
+}
+
+/* Exact gradient per spec for hero banner */
+.vigovia-hero-gradient {
+  background: linear-gradient(90deg, #4BA1EB 0%, #936FE0 100%);
+}
+
+/* Layout Classes */
+.w-full {
+  width: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.bg-gray-200 {
+  background-color: #e5e7eb;
+}
+
+.bg-gray-300 {
+  background-color: #d1d5db;
+}
+
+.bg-gray-600 {
+  background-color: #4b5563;
+}
+
+.bg-gray-700 {
+  background-color: #374151;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.bg-green-500 {
+  background-color: #10b981;
+}
+
+.bg-red-500 {
+  background-color: #ef4444;
+}
+
+.bg-green-600 {
+  background-color: #059669;
+}
+
+.bg-red-600 {
+  background-color: #dc2626;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.text-blue-600 {
+  color: #2563eb;
+}
+
+/* Flexbox */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* Spacing */
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.space-x-2>*+* {
+  margin-left: 0.5rem;
+}
+
+.space-x-4>*+* {
+  margin-left: 1rem;
+}
+
+.space-x-6>*+* {
+  margin-left: 1.5rem;
+}
+
+.space-x-8>*+* {
+  margin-left: 2rem;
+}
+
+.space-y-2>*+* {
+  margin-top: 0.5rem;
+}
+
+.space-y-4>*+* {
+  margin-top: 1rem;
+}
+
+.space-y-8>*+* {
+  margin-top: 2rem;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+/* Typography */
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Borders */
+.border {
+  border-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-gray-100 {
+  border-color: #f3f4f6;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-l-lg {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Shadows */
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Positioning */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+/* Sizing */
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-54 {
+  width: 13.5rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.h-54 {
+  height: 13.5rem;
+}
+
+.min-w-80px {
+  min-width: 80px;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-100vw {
+  max-width: 100vw;
+}
+
+/* Overflow */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+/* Display */
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* Transforms */
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-rotate-90 {
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* Focus */
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.focus\:ring-vigovia-purple:focus {
+  box-shadow: 0 0 0 2px rgba(50, 30, 93, 0.5);
+}
+
+.focus\:border-transparent:focus {
+  border-color: transparent;
+}
+
+/* Hover */
+.hover\:bg-vigovia-light-purple:hover {
+  background-color: var(--vigovia-light-purple);
+}
+
+.hover\:bg-green-600:hover {
+  background-color: #059669;
+}
+
+.hover\:bg-red-600:hover {
+  background-color: #dc2626;
+}
+
+/* Transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Dividers */
+.divide-y>*+* {
+  border-top-width: 1px;
+}
+
+.divide-gray-100>*+* {
+  border-color: #f3f4f6;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end;
+  }
+}
+
+/* Custom Components */
+.itinerary-container {
+  width: 1407px;
+  min-height: 12748px;
+  max-width: 100vw;
+  margin: 0 auto;
+  background: white;
+}
+
+/* Header hero banner per Figma */
+.hero-banner {
+  width: 1207px;
+  height: 289px;
+  border-radius: 30px;
+  margin: 0 auto 24px auto;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  /* Hi, Rahul! */
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.hero-content h2 {
+  /* Singapore Itinerary */
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.hero-content p {
+  /* 4 Days 3 Nights */
+  font-size: 28px;
+  margin: 0 0 16px 0;
+}
+
+.hero-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.day-image {
+  width: 216px;
+  height: 216px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.day-badge {
+  background-color: var(--vigovia-purple);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 66px;
+  height: 308px;
+  /* spans full card height on desktop */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.timeline-dot {
+  width: 1rem;
+  height: 1rem;
+  background-color: #3b82f6;
+  border-radius: 50%;
+}
+
+/* Logo image centering and sizing from screenshot */
+.vigovia-logo-img {
+  width: 345.73553466796875px;
+  height: 126.48158264160156px;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .day-badge {
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .itinerary-container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .day-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .day-badge {
+    writing-mode: horizontal-tb;
+    height: 48px;
+    min-width: 120px;
+    border-radius: 24px;
+  }
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--vigovia-purple);
+  box-shadow: 0 0 0 2px rgba(50, 30, 93, 0.2);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--vigovia-purple);
+  box-shadow: 0 0 0 2px rgba(50, 30, 93, 0.2);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--vigovia-purple);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--vigovia-light-purple);
+}
+
+.btn-secondary {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #059669;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.btn-link {
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.table-header {
+  background-color: var(--vigovia-purple);
+  color: white;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+}
+
+.table-row {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.summary-box {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.summary-box::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.5rem;
+  background-color: var(--vigovia-purple);
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.summary-box-content {
+  margin-left: 1rem;
+}
+
+/* Flight summary pills to match screenshot */
+.flight-pill {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  border: 2px solid rgba(50, 30, 93, 0.2);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.flight-pill-left {
+  background: rgba(107, 70, 193, 0.1);
+  color: var(--vigovia-purple);
+  font-weight: 700;
+  padding: 14px 18px;
+}
+
+.flight-pill-body {
+  padding: 14px 18px;
+  color: var(--vigovia-purple);
+}
+
+/* Travel details bordered box per Figma */
+.travel-details-box {
+  width: 1207px;
+  min-height: 90px;
+  border-radius: 30px;
+  border: 1px solid #541C9C;
+  background: #fff;
+  margin: 0 auto 24px auto;
+  padding: 22px 24px;
+  margin-top: 20px;
+}
+
+.travel-details-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 64px;
+  padding-top: 25px;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.travel-label {
+  color: #6b7280;
+  /* text-gray-600 */
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.travel-value {
+  color: var(--vigovia-purple);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Responsive for hero and travel details */
+@media (max-width: 1280px) {
+  .hero-banner, .travel-details-box {
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    height: auto;
+    padding: 24px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content h2 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .travel-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .travel-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
