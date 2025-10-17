@@ -13,47 +13,73 @@ interface ActivityTableProps {
 
 const ActivityTable: React.FC<ActivityTableProps> = ({ activities }) => {
   return (
-    <div className="mx-6 mb-8">
-      <h2 className="text-2xl font-bold text-vigovia-purple mb-6">
-        Activity Table
+    <div className="activity-table-section">
+      <h2 className="activity-table-title">
+        Activity <span className="activity-table-accent">Table</span>
       </h2>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="bg-vigovia-purple text-white px-6 py-4">
-          <div className="grid grid-cols-4 gap-4 font-semibold">
-            <div>City</div>
-            <div>Activity</div>
-            <div>Type</div>
-            <div>Time Required</div>
+      <div className="activity-table-container">
+        {/* City Column */}
+        <div className="activity-column city-column">
+          <div className="activity-column-header city-header">City</div>
+          <div className="activity-column-body city-body">
+            {activities.map((activity, index) => (
+              <div key={index} className="activity-row-item">
+                {activity.city}
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="divide-y divide-gray-100">
-          {activities.map((activity, index) => (
-            <div key={index} className="px-6 py-4 bg-gray-50">
-              <div className="grid grid-cols-4 gap-4 text-vigovia-purple">
-                <div className="font-medium">{activity.city}</div>
-                <div className="font-medium">{activity.activity}</div>
-                <div className="font-medium">{activity.type}</div>
-                <div className="font-medium">{activity.timeRequired}</div>
+        {/* Activity Column */}
+        <div className="activity-column activity-column-main">
+          <div className="activity-column-header activity-header">Activity</div>
+          <div className="activity-column-body activity-body">
+            {activities.map((activity, index) => (
+              <div key={index} className="activity-row-item">
+                {activity.activity}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+
+        {/* Type Column */}
+        <div className="activity-column type-column">
+          <div className="activity-column-header type-header">Type</div>
+          <div className="activity-column-body type-body">
+            {activities.map((activity, index) => (
+              <div key={index} className="activity-row-item">
+                {activity.type}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Time Required Column */}
+        <div className="activity-column time-column">
+          <div className="activity-column-header time-header">Time Required</div>
+          <div className="activity-column-body time-body">
+            {activities.map((activity, index) => (
+              <div key={index} className="activity-row-item">
+                {activity.timeRequired}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>  
 
       {/* Terms and Conditions */}
-      <div className="mt-6">
-        <h3 className="text-xl font-bold text-vigovia-purple mb-2">
-          <span className="text-vigovia-purple">Terms</span> and{" "}
-          <span className="text-vigovia-light-purple">Conditions</span>
+      <div className="activity-terms">
+        <h3 className="activity-terms-title">
+          <span className="activity-terms-accent">Terms</span> and{" "}
+          <span className="activity-terms-light">Conditions</span>
         </h3>
-        <button className="text-blue-600 underline bg-transparent border-none cursor-pointer">
+        <button className="activity-terms-button">
           View all terms and conditions
         </button>
       </div>
-    </div>
+    </div> 
   );
-};
+};   
 
 export default ActivityTable;

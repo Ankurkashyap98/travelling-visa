@@ -12,24 +12,24 @@ interface FlightSummaryProps {
 
 const FlightSummary: React.FC<FlightSummaryProps> = ({ flights }) => {
   return (
-    <div className="mx-6 mb-8">
-      <h2 className="text-2xl font-bold text-vigovia-purple mb-6">
-        Flight <span className="text-vigovia-light-purple">Summary</span>
+    <div className="flight-summary-section">
+      <h2 className="flight-summary-title">
+        Flight <span className="flight-summary-accent">Summary</span>
       </h2>
-      <div className="space-y-4">
-        {flights.map((f, idx) => (
-          <div key={idx} className="flight-pill">
-            <div className="flight-pill-left">{f.date}</div>
-            <div className="flight-pill-body">
-              <span className="font-bold">{f.airline}</span> {f.fromTo}.
+      <div className="flight-list">
+        {flights.map((flight, idx) => (
+          <div key={idx} className="flight-item">
+            <div className="flight-date">{flight.date}</div>
+            <div className="flight-details">
+              <span className="flight-airline flight-airlin-span">{flight.airline}</span> {flight.fromTo}.
             </div>
           </div>
         ))}
       </div>
-      <p className="text-sm text-gray-600 mt-2">
-        Note: All Flights Include Meals, Seat Choice (Excluding XL), And
-        20kg/25Kg Checked Baggage.
+      <p className="flight-note">
+        Note: All Flights Include Meals, Seat Choice (Excluding XL), And 20kg/25Kg Checked Baggage.
       </p>
+      <div className="flight-separator"></div>
     </div>
   );
 };

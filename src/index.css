@@ -35,6 +35,7 @@ code {
 
 .text-vigovia-light-purple {
   color: var(--vigovia-light-purple);
+  font-size: 34px;
 }
 
 .bg-gradient-to-r {
@@ -227,6 +228,11 @@ code {
 }
 
 .mb-4 {
+  /* display: flex; */
+  text-align: center;
+  line-height: 70px;
+  font-size: 20px;
+  font-weight: 300;
   margin-bottom: 1rem;
 }
 
@@ -236,6 +242,7 @@ code {
 
 .mb-8 {
   margin-bottom: 2rem;
+  /* border: 2px solid red; */
 }
 
 .mt-4 {
@@ -251,8 +258,10 @@ code {
 }
 
 .mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  width: 1207px;
+  margin: 0 auto;
+  /* margin-left: 1.5rem; */
+  /* margin-right: 1.5rem; */
 }
 
 .mx-auto {
@@ -313,8 +322,10 @@ code {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.grid-cols-3 {
+.grid-cols-3  {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* border: 2px solid purple; */
+  /* border-radius: 20px; */
 }
 
 .grid-cols-4 {
@@ -330,7 +341,7 @@ code {
 }
 
 .gap-6 {
-  gap: 1.5rem;
+  gap: 16px;
 }
 
 /* Typography */
@@ -340,7 +351,8 @@ code {
 }
 
 .text-sm {
-  font-size: 0.875rem;
+  font-weight: 300;
+  font-size: 18px;
   line-height: 1.25rem;
 }
 
@@ -350,8 +362,10 @@ code {
 }
 
 .text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 34px;
+  line-height: 32px;
+  font-weight: 700;
+  font-family: Roboto;
 }
 
 .text-2xl {
@@ -419,6 +433,7 @@ code {
 }
 
 .rounded-2xl {
+  border: 1px solid purple;
   border-radius: 1rem;
 }
 
@@ -629,7 +644,7 @@ code {
   width: 1207px;
   height: 289px;
   border-radius: 30px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto auto;
   color: #fff;
   display: flex;
   align-items: center;
@@ -674,6 +689,59 @@ code {
   border-radius: 999px;
 }
 
+/* Day Itinerary Section Styles */
+.day-itinerary-section {
+  width: 1213px;
+  height: 332px;
+  margin: 0 auto 24px auto;
+  position: relative;
+}
+
+.day-itinerary-content {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+}
+
+/* Day Badge Styles */
+.day-badge-container {
+  width: 73px;
+  height: 308px;
+  margin-right: 100px;
+}
+
+.day-badge {
+  width: 73px;
+  height: 308px;
+  background-color: #321E5D;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.day-badge span {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Image Section Styles */
+.day-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-right: 90px; */
+  min-width: 216px;
+}
+
+.day-image-container {
+  margin-bottom: 16px;
+}
+
 .day-image {
   width: 216px;
   height: 216px;
@@ -681,26 +749,105 @@ code {
   object-fit: cover;
 }
 
-.day-badge {
-  background-color: var(--vigovia-purple);
-  color: white;
-  padding: 1rem 1.5rem;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 66px;
-  height: 308px;
-  /* spans full card height on desktop */
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+.day-text-content {
+  text-align: center;
 }
 
-.timeline-dot {
-  width: 1rem;
-  height: 1rem;
+.day-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.day-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Timeline Styles */
+.timeline-section {
+  
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  gap: 40px;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: #3b82f6;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.timeline-marker {
+  width: 16px;
+  height: 16px;
   background-color: #3b82f6;
   border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  display: flex;
+  gap: 30px;
+  font-size: 30px;
+  font-weight: 300;
+  flex: 1;
+}
+
+.timeline-period {
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 12px 0;
+}
+
+.timeline-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.activity-text {
+  padding-left: 40px;
+  font-size: 20px;
+  font-weight:300;
+  color: #374151;
+  margin: 0;
+  line-height: 1.4;
+
+}
+
+.activity-text::before {
+  content: '• ';
+  margin-right: 4px;
+  /* display: flex; */
 }
 
 /* Logo image centering and sizing from screenshot */
@@ -710,30 +857,569 @@ code {
   object-fit: contain;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .day-badge {
-    height: 260px;
-  }
+/* Flight Summary Styles */
+.flight-summary-section {
+  width: 1207px;
+  margin: 0 auto 24px auto;
 }
 
-@media (max-width: 768px) {
-  .itinerary-container {
-    width: 100%;
-    padding: 0 16px;
-  }
+.flight-summary-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
 
-  .day-image {
-    width: 180px;
-    height: 180px;
-  }
+.flight-summary-title .flight-summary-accent {
+  color: #6B46C1;
+}
 
-  .day-badge {
-    writing-mode: horizontal-tb;
-    height: 48px;
-    min-width: 120px;
-    border-radius: 24px;
-  }
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.flight-item {
+  width: 1207px;
+  height: 60px;
+  border: 2px solid rgba(50, 30, 93, 0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.flight-date {
+  width: 220px;
+  height: 100%;
+  background: rgba(107, 70, 193, 0.1);
+  color: #321E5D;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.flight-details {
+  flex: 1;
+  padding: 0 18px;
+  color: #321E5D;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.flight-airline {
+  font-weight: 700;
+  color: black;
+}
+.flight-airlin-span text{ 
+  font-weight: 300;
+  letter-spacing: 3px;
+  /* padding-left: 50px; */
+}
+
+.flight-note {
+  font-size: 14px;
+  color: #374151;
+  margin: 16px 0;
+}
+
+.flight-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin-top: 16px;
+}
+
+/* Hotel Bookings Styles */
+.hotel-bookings-section {
+  width: 1206.999755859375px;
+  height: 745px;
+  margin: 0 auto 24px auto;
+}
+
+.hotel-bookings-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.hotel-bookings-title .hotel-bookings-accent {
+  color: #6B46C1;
+}
+
+.hotel-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.hotel-table-header {
+  display: grid;
+  grid-template-columns: 257.3291320800781px 214.6104736328125px 219.69602966308594px 219.69602966308594px 336.351318359375px;
+  background-color: #321E5D;
+  border-radius: 12px 12px 0 0;
+}
+
+.hotel-header-cell {
+  color: white;
+  font-weight: 600;
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.hotel-table-body {
+  background-color: #F8F0FC;
+}
+
+.hotel-table-row {
+  display: grid;
+  grid-template-columns: 257.3291320800781px 214.6104736328125px 219.69602966308594px 219.69602966308594px 336.351318359375px;
+  border-bottom: 1px solid white;
+}
+
+.hotel-cell {
+  padding: 16px 18px;
+  color: #321E5D;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.city-cell {
+  justify-content: flex-start;
+}
+
+.checkin-cell {
+  justify-content: flex-start;
+}
+
+.checkout-cell {
+  justify-content: flex-start;
+}
+
+.nights-cell {
+  justify-content: center;
+}
+
+.hotelname-cell {
+  justify-content: flex-start;
+  line-height: 1.4;
+}
+
+.hotel-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hotel-note {
+  font-size: 14px;
+  color: #374151;
+  margin: 0;
+}
+
+/* Important Notes Styles */
+.important-notes-section {
+  width: 1201px;
+  height: 586px;
+  margin: 0 auto 24px auto;
+}
+
+.important-notes-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.important-notes-title .important-notes-accent {
+  color: #6B46C1;
+}
+
+.important-notes-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.important-notes-header {
+  display: grid;
+  grid-template-columns: 329px 860px;
+  background-color: #321E5D;
+  border-radius: 12px 12px 0 0;
+}
+
+.important-notes-point-header,
+.important-notes-details-header {
+  color: white;
+  font-weight: 600;
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.important-notes-body {
+  background-color: #F8F0FC;
+}
+
+.important-notes-row {
+  display: grid;
+  grid-template-columns: 329px 860px;
+  border-bottom: 1px solid white;
+}
+
+.important-notes-point-cell {
+  padding: 16px 18px;
+  color: #321E5D;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.important-notes-details-cell {
+  padding: 16px 18px;
+  color: #321E5D;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.4;
+}
+
+/* Information Section Styles */
+.information-section {
+  width: 1173.76171875px;
+  height: 113px;
+  margin: 0 auto 24px auto;
+}
+
+.information-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.company-info {
+  flex: 1;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.company-address {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-item {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  margin: 0;
+}
+
+.logo-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.vigovia-logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6B46C1;
+  text-transform: lowercase;
+}
+
+.vigovia-tagline {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B46C1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.airplane-icon {
+  font-size: 16px;
+  color: #6B46C1;
+  margin-left: 8px;
+}
+
+/* Footer Styles */
+.footer-section {
+  width: 1173.76171875px;
+  height: 113px;
+  margin: 0 auto 24px auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.footer-company-info {
+  flex: 1;
+}
+
+.footer-company-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 8px 0;
+}
+
+.footer-company-address {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-contact-item {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  margin: 0;
+}
+
+.footer-logo-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.footer-vigovia-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6B46C1;
+  text-transform: lowercase;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B46C1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-airplane-icon {
+  font-size: 16px;
+  color: #6B46C1;
+  margin-left: 8px;
+}
+
+/* Activity Table Styles */
+.activity-table-section {
+  width: 1206px;
+  height: 1478px;
+  margin: 0 auto;
+  /* margin: 0 auto 24px auto; */
+}
+
+.activity-table-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.activity-table-title .activity-table-accent {
+  color: #6B46C1;
+}
+
+.activity-table-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.activity-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-column-header {
+  color: white;
+  font-weight: 500;
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 26px;
+  height: 61px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #321E5D;
+  border-radius: 45px 45px 0 0;
+}
+
+.activity-column-body {
+  background-color: #F9EEFF;
+  border-radius: 0 0 30px 30px;
+  padding: 0;
+}
+
+.activity-row-item {
+  padding: 16px 18px;
+  color: #321E5D;
+  font-weight: 300;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.activity-row-item:last-child {
+  border-bottom: none;
+}
+
+/* Individual Column Widths */
+.city-column {
+  width: 177px;
+}
+
+.activity-column-main {
+  width: 523px;
+}
+
+.type-column {
+  width: 204px;
+}
+
+.time-column {
+  width: 251px;
+}
+
+/* Column-specific styling */
+.city-body .activity-row-item,
+.type-body .activity-row-item,
+.time-body .activity-row-item {
+  justify-content: center;
+  text-align: center;
+}
+
+.activity-body .activity-row-item {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Terms and Conditions */
+.activity-terms {
+  margin-top: 24px;
+}
+
+.activity-terms-title {
+  font-style: bold;
+  font-size: 34px;
+  font-weight: 700;
+  margin-left: 15px;
+}
+
+.activity-terms-accent {
+  color: #321E5D;
+}
+
+.activity-terms-light {
+  color: #6B46C1;
+}
+
+.activity-terms-button {
+  font-size: 34px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 25px;
+  background: transparent;
+  border: none;
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 15px;
+
+  /* font-size: 14px; */
+}
+
+/* Travel details bordered box per Figma */
+.travel-details-box {
+  width: 1207px;
+  height: 104px;
+  border-radius: 30px;
+  border: 1px solid #541C9C;
+  background: #fff;
+  margin: 0 auto;
+  padding-top:45px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  text-align: center;
+
+}
+
+.travel-details-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 64px;
+  /* padding-top: 25px; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.travel-label {
+  color: black;
+  font-size: 20 px;
+  font-weight: 700;
+  line-height: 32px;
+
+}
+
+.travel-value {
+  color: var(--vigovia-purple);
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .form-input {
@@ -849,61 +1535,241 @@ code {
   margin-left: 1rem;
 }
 
-/* Flight summary pills to match screenshot */
-.flight-pill {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  align-items: center;
-  border: 2px solid rgba(50, 30, 93, 0.2);
-  border-radius: 14px;
-  overflow: hidden;
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .day-itinerary-section {
+    width: calc(100% - 32px);
+    max-width: 1213px;
+  }
+
+  .flight-summary-section {
+    width: calc(100% - 32px);
+    max-width: 1207px;
+  }
+
+  .hotel-bookings-section {
+    width: calc(100% - 32px);
+    max-width: 1206.999755859375px;
+  }
+
+  .important-notes-section {
+    width: calc(100% - 32px);
+    max-width: 1201px;
+  }
+
+  .information-section {
+    width: calc(100% - 32px);
+    max-width: 1173.76171875px;
+  }
+
+  .footer-section {
+    width: calc(100% - 32px);
+    max-width: 1173.76171875px;
+  }
+
+  .activity-table-section {
+    width: calc(100% - 32px);
+    max-width: 1206px;
+  }
 }
 
-.flight-pill-left {
-  background: rgba(107, 70, 193, 0.1);
-  color: var(--vigovia-purple);
-  font-weight: 700;
-  padding: 14px 18px;
+@media (max-width: 1024px) {
+  .day-badge {
+    height: 260px;
+  }
+
+  .hotel-table-header,
+  .hotel-table-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .important-notes-header,
+  .important-notes-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .information-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .logo-section {
+    align-items: center;
+  }
+
+  .activity-table-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .activity-column {
+    width: 100% !important;
+  }
 }
 
-.flight-pill-body {
-  padding: 14px 18px;
-  color: var(--vigovia-purple);
+@media (max-width: 768px) {
+  .itinerary-container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .day-itinerary-section {
+    width: 100%;
+    height: auto;
+    min-height: 332px;
+  }
+
+  .day-itinerary-content {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 50px;
+  }
+
+  .day-badge-container {
+    width: 100%;
+    height: 48px;
+    margin-right: 0;
+  }
+
+  .day-badge {
+    width: 120px;
+    height: 48px;
+    writing-mode: horizontal-tb;
+    border-radius: 24px;
+    margin: 0 auto;
+  }
+
+  .day-image-section {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .day-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .timeline-section {
+    padding-top: 0;
+  }
+
+  .timeline-container {
+    padding-left: 0;
+  }
+
+  .timeline-container::before {
+    display: none;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+
+  .flight-item {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    min-height: 60px;
+  }
+
+  .flight-date {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .hotel-table-header,
+  .hotel-table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hotel-header-cell,
+  .hotel-cell {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .important-notes-header,
+  .important-notes-row {
+    grid-template-columns: 1fr;
+  }
+
+  .important-notes-point-header,
+  .important-notes-point-cell {
+    border-bottom: 1px solid #e5e7eb;
+  }
 }
 
-/* Travel details bordered box per Figma */
-.travel-details-box {
-  width: 1207px;
-  min-height: 90px;
-  border-radius: 30px;
-  border: 1px solid #541C9C;
-  background: #fff;
-  margin: 0 auto 24px auto;
-  padding: 22px 24px;
-  margin-top: 20px;
-}
+@media (max-width: 480px) {
+  .day-image {
+    width: 150px;
+    height: 150px;
+  }
 
-.travel-details-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 64px;
-  padding-top: 25px;
-  align-items: center;
-  justify-content: space-between;
-  
-}
+  .day-date {
+    font-size: 14px;
+  }
 
-.travel-label {
-  color: #6b7280;
-  /* text-gray-600 */
-  font-size: 14px;
-  font-weight: 600;
-}
+  .day-title {
+    font-size: 12px;
+  }
 
-.travel-value {
-  color: var(--vigovia-purple);
-  font-size: 18px;
-  font-weight: 700;
+  .timeline-period {
+    font-size: 14px;
+  }
+
+  .activity-text {
+    font-size: 12px;
+  }
+
+  .flight-summary-title,
+  .hotel-bookings-title,
+  .important-notes-title {
+    font-size: 20px;
+  }
+
+  .company-name {
+    font-size: 16px;
+  }
+
+  .vigovia-logo-text {
+    font-size: 16px;
+  }
+
+  .footer-section {
+    width: calc(100% - 32px);
+    max-width: 1173.76171875px;
+  }
+
+  .activity-table-section {
+    width: calc(100% - 32px);
+    max-width: 1206px;
+  }
+
+  .activity-table-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .activity-column {
+    width: 100% !important;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-logo-section {
+    align-items: center;
+  }
 }
 
 /* Responsive for hero and travel details */

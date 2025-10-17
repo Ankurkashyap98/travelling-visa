@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import ItineraryForm from "./components/ItineraryForm";
 import PDFGenerator from "./components/PDFGenerator";
 
+
 // Sample data - this will be replaced with form data later
 const sampleData = {
   travelerName: "Rahul",
@@ -54,10 +55,12 @@ const sampleData = {
             time: "Evening",
             description:
               "Explore Gardens By The Bay, Including Super Tree Grove (3-4 Hours)",
+              
           },
         ],
       },
     },
+    
     {
       dayNumber: 2,
       date: "28th November",
@@ -90,7 +93,8 @@ const sampleData = {
           { time: "Evening", description: "Marina Bay Sands Light Show" },
         ],
       },
-    },
+    }, 
+    
     {
       dayNumber: 4,
       date: "30th November",
@@ -104,6 +108,34 @@ const sampleData = {
     },
   ],
   hotelBookings: [
+    {
+      city: "Singapore",
+      checkIn: "24/02/2024",
+      checkOut: "27/02/2024",
+      nights: 3,
+      hotelName: "Super Townhouse Oak Vashi Formerly Blue Diamond",
+    },
+    {
+      city: "Singapore",
+      checkIn: "24/02/2024",
+      checkOut: "27/02/2024",
+      nights: 3,
+      hotelName: "Super Townhouse Oak Vashi Formerly Blue Diamond",
+    },
+    {
+      city: "Singapore",
+      checkIn: "24/02/2024",
+      checkOut: "27/02/2024",
+      nights: 3,
+      hotelName: "Super Townhouse Oak Vashi Formerly Blue Diamond",
+    },
+    {
+      city: "Singapore",
+      checkIn: "24/02/2024",
+      checkOut: "27/02/2024",
+      nights: 3,
+      hotelName: "Super Townhouse Oak Vashi Formerly Blue Diamond",
+    },
     {
       city: "Singapore",
       checkIn: "24/02/2024",
@@ -144,7 +176,7 @@ const sampleData = {
       count: 2,
       details: "Airport To Hotel - Hotel To Attractions - Day Trips If Any",
       status: "Included",
-    },
+    }, 
   ],
   flights: [
     {
@@ -348,8 +380,11 @@ function App() {
             <PDFGenerator itineraryRef={itineraryRef} />
           </div>
 
+          
+
           {/* Itinerary Content */}
           <div ref={itineraryRef} className="itinerary-container">
+            
             {/* Header */}
             <Header
               travelerName={itineraryData.travelerName}
@@ -359,18 +394,23 @@ function App() {
 
             {/* Travel Details */}
             <TravelDetails {...itineraryData.travelDetails} />
+            
 
             {/* Day Itineraries */}
             {itineraryData.days.map((day) => (
               <DayItinerary key={day.dayNumber} {...day} />
             ))}
+            <hr />
 
             {/* Flight Summary */}
             <FlightSummary flights={itineraryData.flights} />
+            <hr />
 
             {/* Hotel Bookings */}
             <HotelBookings bookings={itineraryData.hotelBookings} />
-
+            <hr />
+            <Footer/>
+            <hr />
             {/* Important Notes */}
             <ImportantNotes notes={itineraryData.importantNotes} />
 
@@ -379,12 +419,20 @@ function App() {
               services={itineraryData.services}
               inclusions={itineraryData.inclusions}
             />
-
+            <Footer/> 
+            <hr />
+              
             {/* Activity Table */}
             <ActivityTable activities={itineraryData.activities} />
+            <br /> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <hr />
+
+            <Footer/>
 
             {/* Payment Plan */}
-            <PaymentPlan {...itineraryData.paymentPlan} />
+            <PaymentPlan 
+              {...itineraryData.paymentPlan} 
+              {...itineraryData.paymentPlan.visaDetails} 
+            />
 
             {/* Footer */}
             <Footer />
@@ -392,7 +440,10 @@ function App() {
         </div>
       )}
     </div>
+    
   );
+  
 }
+<hr />
 
 export default App;
