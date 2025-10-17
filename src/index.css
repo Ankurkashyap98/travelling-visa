@@ -258,7 +258,7 @@ code {
 }
 
 .mx-6 {
-  width: 1207px;
+  width: 1265px;
   margin: 0 auto;
   /* margin-left: 1.5rem; */
   /* margin-right: 1.5rem; */
@@ -322,7 +322,7 @@ code {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.grid-cols-3  {
+.grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   /* border: 2px solid purple; */
   /* border-radius: 20px; */
@@ -633,7 +633,7 @@ code {
 /* Custom Components */
 .itinerary-container {
   width: 1407px;
-  min-height: 12748px;
+  /* min-height: 12748px; */
   max-width: 100vw;
   margin: 0 auto;
   background: white;
@@ -641,7 +641,7 @@ code {
 
 /* Header hero banner per Figma */
 .hero-banner {
-  width: 1207px;
+  width: 1265px;
   height: 289px;
   border-radius: 30px;
   margin: 0 auto auto;
@@ -701,6 +701,7 @@ code {
   display: flex;
   align-items: flex-start;
   height: 100%;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.553);
 }
 
 /* Day Badge Styles */
@@ -770,7 +771,7 @@ code {
 
 /* Timeline Styles */
 .timeline-section {
-  
+
   display: flex;
   align-items: flex-start;
   padding-top: 20px;
@@ -782,7 +783,8 @@ code {
   flex-direction: column;
   gap: 22px;
   position: relative;
-  padding-left: 24px;
+  padding-left: 1px;
+  margin-left: 26px;
 }
 
 .timeline-container::before {
@@ -837,7 +839,7 @@ code {
 .activity-text {
   padding-left: 40px;
   font-size: 20px;
-  font-weight:300;
+  font-weight: 300;
   color: #374151;
   margin: 0;
   line-height: 1.4;
@@ -859,7 +861,7 @@ code {
 
 /* Flight Summary Styles */
 .flight-summary-section {
-  width: 1207px;
+  width: 1265px;
   margin: 0 auto 24px auto;
 }
 
@@ -881,7 +883,7 @@ code {
 }
 
 .flight-item {
-  width: 1207px;
+  width: 1265px;
   height: 60px;
   border: 2px solid rgba(50, 30, 93, 0.2);
   border-radius: 14px;
@@ -917,7 +919,8 @@ code {
   font-weight: 700;
   color: black;
 }
-.flight-airlin-span text{ 
+
+.flight-airlin-span text {
   font-weight: 300;
   letter-spacing: 3px;
   /* padding-left: 50px; */
@@ -1386,13 +1389,13 @@ code {
 
 /* Travel details bordered box per Figma */
 .travel-details-box {
-  width: 1207px;
+  width: 1265px;
   height: 104px;
   border-radius: 30px;
   border: 1px solid #541C9C;
   background: #fff;
   margin: 0 auto;
-  padding-top:45px;
+  padding-top: 45px;
   margin-top: 25px;
   margin-bottom: 50px;
   text-align: center;
@@ -1544,7 +1547,7 @@ code {
 
   .flight-summary-section {
     width: calc(100% - 32px);
-    max-width: 1207px;
+    max-width: 1265px;
   }
 
   .hotel-bookings-section {

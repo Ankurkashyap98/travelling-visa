@@ -185,18 +185,22 @@ const PaymentPlan: React.FC<PaymentPlanProps> = ({
       </div>
 
       {/* PLAN.PACK.GO! + Book Now */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-[#321E5D] mb-6">
+      <div className="text-center grid justify-center m-auto mb-12">
+        <h2
+          style={{ fontSize: "48px" }}
+          className="text-[48px] font-bold text-[#321E5D] mb-6"
+        >
           PLAN.PACK.GO!
         </h2>
         <button
           onClick={handleBook}
           aria-label="Book now"
-          className="text-white font-medium"
+          className="text-white h-[73px] max-w-[440px] w-full font-medium"
           style={{
             background: "#521f8e",
-            padding: "12px 56px",
+            padding: "22px 56px",
             borderRadius: 999,
+            fontSize: "23px",
             border: "none",
             boxShadow: "none",
             cursor: "pointer",
